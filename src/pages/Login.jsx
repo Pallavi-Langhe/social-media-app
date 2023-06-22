@@ -20,7 +20,7 @@ function Login() {
 
       if (response.status === 200) {
         const data = await response.json();
-        const { foundUser, encodedToken } = data;
+        const encodedToken = data.encodedToken;
         localStorage.setItem('encoded-token', encodedToken);
         navigate('/');
       } else {
