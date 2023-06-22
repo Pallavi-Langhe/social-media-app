@@ -11,7 +11,6 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [reenterPassword, setReenterPassword] = useState('');
-  const [isAccountCreated, setIsAccountCreated] = useState(false);
 
   const signupHandler = async () => {
     try {
@@ -29,7 +28,6 @@ function Signup() {
 
       if (response.ok) {
         toast.success('Account created successfully');
-        setIsAccountCreated(true);
       } else {
         toast.error('Error creating account. Please try again.');
       }
