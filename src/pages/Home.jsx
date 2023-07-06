@@ -20,9 +20,9 @@ function Home() {
                 <Sidebar />
                 <Post />
                 <Suggestions />
-                {userDetails}
+                
             </div>
-
+            {userDetails}
         </div>
     )
 }
