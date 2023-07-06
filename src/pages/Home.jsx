@@ -8,13 +8,13 @@ import Post from '../components/Home/Post';
 function Home() {
     const [userDetails, setUserDetails] = useState();
 
+
     useEffect(() => {
         const user = localStorage.getItem("user-id");
         setUserDetails(user);
-    }, [])
+    }, []);
     return (
         <div className='flex flex-col'>
-
             <Navbar />
             <div className='flex justify-between'>
                 <Sidebar />
