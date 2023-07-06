@@ -1,0 +1,48 @@
+/* LandingPage.css */
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Landing page styles */
+.landing-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  margin-left: 40px;
+  border-radius: 18px;
+  width: 280px;
+  background-color: #f5f1f5;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.sidebar li:hover {
+  cursor: pointer;
+
+  background-color: #5c469c;
+  padding: 10px;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+/* Rest of your styles... */

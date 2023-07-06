@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import Sidebar from '../components/Home/Sidebar';
+import Navbar from '../components/Home/Navbar';
+import Suggestions from '../components/Home/Suggestions';
+import Post from '../components/Home/Post';
+
 
 function Home() {
     const [userDetails, setUserDetails] = useState();
@@ -8,10 +13,16 @@ function Home() {
         setUserDetails(user);
     }, [])
     return (
-        <div>
-            Home
-            {userDetails && <p>{userDetails}</p>
-            }
+        <div className='flex flex-col'>
+
+            <Navbar />
+            <div className='flex justify-between'>
+                <Sidebar />
+                <Post />
+                <Suggestions />
+                {userDetails}
+            </div>
+
         </div>
     )
 }

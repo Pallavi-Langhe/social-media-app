@@ -1,0 +1,134 @@
+.post {
+  width: 440px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-button {
+  background-color: #5c469c;
+  border-radius: 2rem;
+  font-size: 16px;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.message-input,
+.hashtags-input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  background-color: #5c469c;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.hashtags {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.emoji-images {
+  /* Add any necessary styles for displaying emojis/images */
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.like-button,
+.comment-button,
+.share-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #5c469c;
+  border-radius: 2rem;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+// .post-layout {
+//   width: 440px;
+//   background-color: #ffffff;
+//   padding: 20px;
+//   border-radius: 4px;
+//   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+// }
+
+// .post-image {
+//   width: 100%;
+//   max-height: 300px;
+//   object-fit: cover;
+//   border-radius: 4px;
+//   margin-bottom: 16px;
+// }
+
+// .post-message {
+//   font-size: 16px;
+//   line-height: 1.5;
+//   margin-bottom: 12px;
+// }
+
+// .post-hashtags {
+//   color: #888888;
+//   margin-bottom: 12px;
+// }
+
+// .post-actions {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+// .post-action {
+//   display: flex;
+//   align-items: center;
+//   color: #888888;
+//   cursor: pointer;
+//   transition: color 0.3s ease;
+
+//   &:hover {
+//     color: #555555;
+//   }
+
+//   &:not(:last-child) {
+//     margin-right: 16px;
+//   }
+
+//   .icon {
+//     margin-right: 4px;
+//   }
+// }
