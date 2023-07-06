@@ -1,0 +1,48 @@
+.suggestions-body {
+  display: block;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+.suggestions {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(246, 243, 247, 0.178);
+}
+
+.user-card {
+  border-radius: 14px;
+  width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #e9d9f8;
+  margin-top: 10px;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.follow-button {
+  padding: 5px 10px;
+  width: 84px;
+  background-color: #5c469c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  font-size: 16px;
+}
+
+.follow-button:hover {
+  background-color: #4e3c85;
+}
+
+.following-state {
+  font-weight: bold;
+}
