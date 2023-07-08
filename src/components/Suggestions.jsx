@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../style/Suggestions.scss';
+import '../style/Suggestions.scss';
 
 const demoUsers = [
     { id: 1, username: 'pallavilanghe126' },

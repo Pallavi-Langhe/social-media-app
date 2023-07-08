@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../style/Post.scss';
+import '../style/Post.scss';
 
 const Post = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
