@@ -1,52 +1,43 @@
-import React, { useState } from 'react';
-import '../style/Suggestions.scss';
-
-const demoUsers = [
-    { id: 1, username: 'pallavilanghe126' },
-    { id: 2, username: 'pallavilanghe126' },
-    { id: 3, username: 'pallavilanghe126' },
-    { id: 4, username: 'pallavilanghe126' },
-];
+import React, { useState, useEffect } from "react";
+import "../style/Suggestions.scss";
 
 const Suggestions = () => {
-    const [following, setFollowing] = useState([]);
+  const [users, setUsers] = useState([]);
 
-    const handleFollow = (id) => {
-        setFollowing([...following, id]);
-    };
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch("/api/users");
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.users);
+        setUsers(data.users);
+      } else {
+        console.error("Failed to fetch users");
+      }
+    } catch (error) {
+      console.error("Error occurred while fetching users", error);
+    }
+  };
 
-    const handleHideUser = (id) => {
-        const updatedUsers = demoUsers.filter((user) => user.id !== id);
-        demoUsers.length = 0; // Clear the array
-        demoUsers.push(...updatedUsers);
-    };
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
-    return (
-        <div className='suggestions-body justify-end'>
-            <h2 className='text-lg font-bold'>Suggestions For You</h2>
-            <div className="suggestions">
-                {demoUsers.map((user) => (
-                    <div key={user.id} className="user-card">
-                        <p className="username">{user.username}</p>
-                        <button
-                            className="follow-button"
-                            onClick={() => {
-                                handleFollow(user.id);
-                                handleHideUser(user.id);
-                            }}
-                        >
-                            Follow
-                        </button>
-                    </div>
-                ))}
-                {following.length > 0 && (
-                    <div className="following-state">
-                        Following: {following.length} user{following.length !== 1 && 's'}
-                    </div>
-                )}
-            </div>
-        </div >
-    );
+  return (
+    <div className="suggestions-body justify-end">
+      <h2 className="text-lg font-bold">Suggestions For You</h2>
+      <div className="suggestions">
+        {users.map((user) => (
+          <div key={user.id} className="user-card">
+            <p className="username">{user.username}</p>
+            <p className="username">{user._id}</p>
+            <button className="follow-button">Follow</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Suggestions;
+
