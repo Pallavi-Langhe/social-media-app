@@ -4,52 +4,56 @@ import "../style/Suggestions.scss";
 const Suggestions = () => {
   const [users, setUsers] = useState([]);
 
-  const fetchUsers = async () => {
-    try {
-      const response = await fetch("/api/users");
-      if (response.ok) {
-        const data = await response.json();
-        const allUsers = data.users;
-        const currentUserId = localStorage.getItem("user-id");
-        const currentUserData = await fetchCurrentUser(currentUserId);
-        if (currentUserData) {
-          const followingUsers = currentUserData.user.following;
-          const filteredUsers = filterUsers(allUsers, followingUsers, currentUserId);
-          setUsers(filteredUsers);
-        } else {
-          console.error("Failed to fetch current user");
-        }
-      } else {
-        console.error("Failed to fetch users");
-      }
-    } catch (error) {
-      console.error("Error occurred while fetching users", error);
-    }
-  };
-
-  const fetchCurrentUser = async (currentUserId) => {
-    try {
-      const response = await fetch(`/api/users/${currentUserId}`);
-      if (response.ok) {
-        const data = await response.json();
-        return data;
-      }
-      return null;
-    } catch (error) {
-      console.error("Error occurred while fetching current user", error);
-      return null;
-    }
-  };
-
-  const filterUsers = (allUsers, followingUsers, currentUserId) => {
-    return allUsers.filter(
-      (user) =>
-        !followingUsers.find((followingUser) => followingUser.id === user.id) &&
-        user.id !== currentUserId
-    );
-  };
-
   useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("/api/users");
+        if (response.ok) {
+          const data = await response.json();
+          const allUsers = data.users;
+          const currentUserId = localStorage.getItem("user-id");
+          const currentUserData = await fetchCurrentUser(currentUserId);
+          if (currentUserData) {
+            const followingUsers = currentUserData.user.following;
+            const filteredUsers = filterUsers(
+              allUsers,
+              followingUsers,
+              currentUserId
+            );
+            setUsers(filteredUsers);
+          } else {
+            console.error("Failed to fetch current user");
+          }
+        } else {
+          console.error("Failed to fetch users");
+        }
+      } catch (error) {
+        console.error("Error occurred while fetching users", error);
+      }
+    };
+
+    const fetchCurrentUser = async (currentUserId) => {
+      try {
+        const response = await fetch(`/api/users/${currentUserId}`);
+        if (response.ok) {
+          const data = await response.json();
+          return data;
+        }
+        return null;
+      } catch (error) {
+        console.error("Error occurred while fetching current user", error);
+        return null;
+      }
+    };
+
+    const filterUsers = (allUsers, followingUsers, currentUserId) => {
+      return allUsers.filter(
+        (user) =>
+          !followingUsers.find(
+            (followingUser) => followingUser.id === user.id
+          ) && user.id !== currentUserId
+      );
+    };
     fetchUsers();
   }, []);
 
@@ -70,3 +74,4 @@ const Suggestions = () => {
 };
 
 export default Suggestions;
+
