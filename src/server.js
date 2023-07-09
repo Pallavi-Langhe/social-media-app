@@ -28,7 +28,7 @@ import {
 } from "./backend/controllers/UserController";
 
 export function makeServer({ environment = "development" } = {}) {
-  console.log("server starting..");
+  // console.log("server starting..");
   return new Server({
     serializers: {
       application: RestSerializer,

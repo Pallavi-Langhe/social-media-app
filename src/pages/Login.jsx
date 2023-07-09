@@ -22,6 +22,7 @@ function Login() {
         const data = await response.json();
         const encodedToken = data.encodedToken;
         localStorage.setItem('encoded-token', encodedToken);
+        localStorage.setItem("user-id", data.foundUser._id);
         navigate('/');
       } else {
         console.error('Invalid credentials. Please try again.');

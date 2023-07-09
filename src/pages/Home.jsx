@@ -14,7 +14,7 @@ const Home = () => {
       const decodedToken = decodeToken(encodedToken);
       const verifiedToken = isExpired(encodedToken);
       if (decodedToken && verifiedToken) {
-        localStorage.setItem("user-id", decodedToken._id);
+        // localStorage.setItem("user-id", decodedToken._id);
       } else {
         if (location.pathname !== "/signup") {
           navigate("/login");
